@@ -6,7 +6,7 @@ Exercise 1: Define an empty array
 Exercise 1 has been completed for you:
 */
 
-const foods = []; // creates variable 'foods'
+const foods = []; // identifies variable 'foods'
 
 console.log('Exercise 1 Result:', foods); // result: array 0
 
@@ -20,9 +20,11 @@ Note: 'pizza' should be the first item in the array, followed by 'cheeseburger'.
 Complete Exercise 2 in the space below:
 */
 
-foods.push('pizza'); // adds element 'pizza'
-foods.push('cheeseburger'); // adds element 'cheeseburger'
+// references array from Exercise 1
+foods.push('pizza'); // adds variable 'pizza'
+foods.push('cheeseburger'); // adds variable 'cheeseburger'
 
+// push returns variable to end of array sequence
 
 console.log('Exercise 2 Result:', foods); // result: [pizza, cheeseburger]
 
@@ -37,6 +39,8 @@ Complete Exercise 3 in the space below:
 // references array from Exercise 2
 foods.unshift('taco'); 
 
+// unshift returns variable to the beginning of the array
+
 console.log('Exercise 3 Result:', foods); // result: ['taco', 'pizza', 'cheeseburger']
 
 /*
@@ -50,7 +54,7 @@ Exercise 4: Access an array element
 Complete Exercise 4 in the space below:
 */
 
-const favFood = foods[1];
+const favFood = foods[1]; // adds variable 'favFood' and returns as second variable within array sequence
 
 console.log('Exercise 4 Result:', favFood);// result: 'pizza'
 
@@ -62,7 +66,9 @@ Exercise 5: Insert an element between two others
 Complete Exercise 5 in the space below:
 */
 
-foods.splice(2, 0, 'tofu');
+foods.splice(2, 0, 'tofu'); 
+
+// splice places new variable 'tofu' in specified location within the array
 
 console.log('Exercise 5 Result:', foods);// result: ['taco', 'pizza', 'tofu', 'cheeseburger']
 
@@ -75,6 +81,8 @@ Complete Exercise 6 in the space below:
 */
 
 foods.splice(1, 1, 'sushi', 'cupcake');
+
+// splice places new variables 'sushi' & 'cupcake' in specified location within the array
 
 console.log('Exercise 6 Result:', foods);// result: ['taco', 'sushi', 'cupcake', 'tofu', 'cheeseburger']
 
@@ -89,7 +97,7 @@ Exercise 7: Using the `slice()` method
 Complete Exercise 7 in the space below:
 */
 
-const yummy = foods.slice(1, 3);
+const yummy = foods.slice(1, 3); // identifies variables 1 & 3 in array sqecuences and assigns them to a new variable with the name of 'yummy'
 
 console.log('Exercise 7 Result:', yummy);// result: ['sushi', 'cupcake']
 
@@ -104,7 +112,7 @@ Exercise 8: Finding an index
 Complete Exercise 8 in the space below:
 */
 
-const soyIdx = foods.indexOf('tofu');
+const soyIdx = foods.indexOf('tofu');// identifies variable of 'tofu' as 'soyIdx' and locates position of variable within the sequence of given array
 
 console.log('Exercise 8 Result:', soyIdx);// result: 3
 
@@ -122,7 +130,7 @@ Note: The final result should log as:
 Complete Exercise 9 in the space below:
 */
 
-const allFoods = foods.join(' -> ');
+const allFoods = foods.join(' -> ');// seperates each variable within sequence with given parameters
 
 console.log('Exercise 9 Result:', allFoods);// result: taco -> sushi -> cupcake -> tofu -> cheeseburger
 
@@ -137,7 +145,7 @@ Exercise 10: Check for an element
 Complete Exercise 10 in the space below:
 */
 
-const hasSoup = foods.includes('soup');
+const hasSoup = foods.includes('soup');// searches for variable within array to determine if true/ false
 
 console.log('Exercise 10 Result:', hasSoup);// result: false
 
