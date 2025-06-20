@@ -21,7 +21,7 @@ Complete Exercise 2 in the space below:
 */
 
 foods.push('pizza'); // adds element 'pizza'
-foods.push('cheeseburger'); // adds element 'cheesebuger'
+foods.push('cheeseburger'); // adds element 'cheeseburger'
 
 
 console.log('Exercise 2 Result:', foods); // result: [pizza, cheeseburger]
@@ -91,7 +91,7 @@ Complete Exercise 7 in the space below:
 
 const yummy = foods.slice(1, 3);
 
-console.log('Exercise 7 result:', yummy);// result: ['sushi', 'cupcake']
+console.log('Exercise 7 Result:', yummy);// result: ['sushi', 'cupcake']
 
 /*
 Exercise 8: Finding an index
@@ -106,7 +106,7 @@ Complete Exercise 8 in the space below:
 
 const soyIdx = foods.indexOf('tofu');
 
-console.log('Exercise 8 result:', soyIdx);// result: 3
+console.log('Exercise 8 Result:', soyIdx);// result: 3
 
 /*
 Exercise 9: Joining elements
@@ -124,7 +124,7 @@ Complete Exercise 9 in the space below:
 
 const allFoods = foods.join(' -> ');
 
-console.log('Exercise 9 result:', allFoods);// result: taco -> sushi -> cupcake -> tofu -> cheeseburger
+console.log('Exercise 9 Result:', allFoods);// result: taco -> sushi -> cupcake -> tofu -> cheeseburger
 
 /*
 Exercise 10: Check for an element
@@ -139,7 +139,7 @@ Complete Exercise 10 in the space below:
 
 const hasSoup = foods.includes('soup');
 
-console.log('Exercise 10 result:', hasSoup);// result: false
+console.log('Exercise 10 Result:', hasSoup);// result: false
 
 /*
 Exercise 11: Odd numbers from an array
@@ -154,10 +154,15 @@ Complete Exercise 11 in the space below:
 */
 
 const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
+const odds = [];
 
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] % 2 !== 0) {
+    odds.push(nums[i]);
+  }
+}
 
-
-console.log('Exercise 11 result:', odds);
+console.log('Exercise 11 Result:', odds);// result: [5, 23, 15, 21, 9, 45, 7, 81]
 
 /*
 Exercise 12: FizzBuzz with arrays
@@ -178,12 +183,33 @@ Exercise 12: FizzBuzz with arrays
 Complete Exercise 12 in the space below:
 */
 
+// reference array from exercise 11
+// const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
 
+const fizz = [];
+const buzz = [];
+const fizzbuzz = [];
 
-console.log('Exercise 12 Results:');
-console.log('  fizz:', fizz);
-console.log('  buzz:', buzz);
-console.log('  fizzbuzz:', fizzbuzz);
+for (let i = 0; i < nums.length; i++) {
+  const num = nums[i];
+  const d3 = num % 3 === 0;
+  const d5 = num % 5 === 0;
+
+  if (d3) { // divisible by 3
+    fizz.push(num);
+  }
+  if (d5) { // divisible by 5
+    buzz.push(num);
+  }
+  if (d3 & d5) { // divisible by 3 & 5
+    fizzbuzz.push(num);
+  }
+}
+
+console.log('Exercise 12 Results:'); 
+console.log('fizz:', fizz);// results: [15, 21, 72, 9, 45, 66, 81, 90]
+console.log('buzz:', buzz);// results: [100, 5, 15, 45, 90]
+console.log('fizzbuzz:', fizzbuzz);// results: [15, 45, 90]
 
 /*
 Exercise 13: Retrieve the Last Array
@@ -204,7 +230,9 @@ const numArrays = [
 	[7, 81, 90]
 ];
 
-console.log('Exercise 13 result:', numList);
+const numList = numArrays[numArrays.length - 1];
+
+console.log('Exercise 13 Result:', numList);// result: [7, 81, 90]
 
 /*
 Exercise 14: Accessing within nested arrays
@@ -217,9 +245,17 @@ Exercise 14: Accessing within nested arrays
 Complete Exercise 14 in the space below:
 */
 
+// reference array from Exercise 13
+// const numArrays = [
+// 	[100, 5, 23],
+// 	[15, 21, 72, 9],
+// 	[45, 66],
+// 	[7, 81, 90]
+// ];
 
+const num = numArrays[2][1];
 
-console.log('Exercise 14 result:', num);
+console.log('Exercise 14 Result:', num);// result: 66
 
 /*
 Exercise 15: Nested array sum
@@ -234,6 +270,20 @@ Hint: Be sure to declare and initialize the total variable before the iterations
 Complete Exercise 15 in the space below:
 */
 
+// reference array from Exercise 13
+// const numArrays = [
+// 	[100, 5, 23],
+// 	[15, 21, 72, 9],
+// 	[45, 66],
+// 	[7, 81, 90]
+// ];
 
+let total = 0;
 
-console.log('Exercise 15 result:\n', total);
+numArrays.forEach(innerArray => {
+  innerArray.forEach(number => {
+    total += number;
+  });
+});
+
+console.log('Exercise 15 Result:\n', total);// result: 534
